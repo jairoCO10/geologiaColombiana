@@ -22,7 +22,7 @@ export default class test extends Component {
 
   _onEdited = (e) => {
     let numEdited = 0;
-    e.layers.eachLayer((layer) => {
+    e.layers.eachLayer((_layer) => {
       numEdited += 1;
     });
     console.log(`_onEdited: edited ${numEdited} layers`, e);
@@ -46,7 +46,7 @@ export default class test extends Component {
 
   _onDeleted = (e) => {
     let numDeleted = 0;
-    e.layers.eachLayer((layer) => {
+    e.layers.eachLayer((_layer) => {
       numDeleted += 1;
     });
     console.log(`onDeleted: removed ${numDeleted} layers`, e);
@@ -92,7 +92,7 @@ export default class test extends Component {
           onDeleteStart={this._onDeleteStart}
           onDeleteStop={this._onDeleteStop}
           draw={{
-            rectangle: false
+            rectangle: true
           }}
         />
       </FeatureGroup>
@@ -102,31 +102,15 @@ export default class test extends Component {
   _editableFG = null;
 
   _onFeatureGroupReady = (reactFGref) => {
-    // populate the leaflet FeatureGroup with the geoJson layers
-
-    // store the ref for future access to content
-
     this._editableFG = reactFGref;
   };
-
   _onChange = () => {
-    // this._editableFG contains the edited geometry, which can be manipulated through the leaflet API
-
     const { onChange } = this.props;
-
     if (!this._editableFG || !onChange) {
       return;
     }
-
     const geojsonData = this._editableFG.leafletElement.toGeoJSON();
     onChange(geojsonData);
   };
 }
 
-// data taken from the example in https://github.com/PaulLeCam/react-leaflet/issues/176
-
-function getGeoJson() {
-  return {
-    
-  };
-}

@@ -39,6 +39,61 @@ function Choro(props) {
                 opacity: 1
               };
               break;
+              case "Q2-Sm":
+              style = {
+                fillOpacity: 1,
+                fillColor: "#FFF4E9",
+                color: "#73B2FD",
+                width: "100%",
+                height: "50px",
+                weight: 2,
+                opacity: 1
+              };
+              break;
+              case "K2-Vu7":
+              style = {
+                fillOpacity: 1,
+                fillColor: "#b9d15e",
+                color: "#ff00c5",
+                width: "100%",
+                height: "50px",
+                weight: 2,
+                opacity: 1
+              };
+              break;
+              case "n3n4-Vm":
+              style = {
+                fillOpacity: 1,
+                fillColor: "#FFF164",
+                color: "#73B2FD",
+                width: "100%",
+                height: "50px",
+                weight: 2,
+                opacity: 1
+              };
+              break;
+              case "N1-VCm":
+              style = {
+                fillOpacity: 1,
+                fillColor: "#ff9650",
+                color: "#FF9650",
+                width: "100%",
+                height: "50px",
+                weight: 2,
+                opacity: 1
+              };
+              break;
+              case "e9n1-Vf":
+              style = {
+                fillOpacity: 1,
+                fillColor: "#FFEF42",
+                color: "#FF5500",
+                width: "100%",
+                height: "50px",
+                weight: 2,
+                opacity: 1
+              };
+              break;
             case "N2-Sm":
               style = {
                 fillOpacity: 1,
@@ -1366,16 +1421,7 @@ function Choro(props) {
               };
               break;
   
-            case "n2n3-Hi":
-              style = {
-                fillOpacity: 1,
-                fillColor: "#FFF054",
-                height: "10px",
-                color: "#FFAC36",
-                weight: 2,
-                opacity: 1
-              };
-              break;
+            
   
             case "e6e7-VCm":
               style = {
@@ -1929,6 +1975,9 @@ function Choro(props) {
                 opacity: 1
               };
               break;
+              default:
+        /* code */
+        break;
           }
           return style;
         

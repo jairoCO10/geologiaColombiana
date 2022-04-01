@@ -1,4 +1,4 @@
-import { Map, TileLayer, LayersControl, withLeaflet, ScaleControl, FeatureGroup, WMSTileLayer } from "react-leaflet";
+import { Map, TileLayer, LayersControl, withLeaflet, ScaleControl, FeatureGroup } from "react-leaflet";
 import React, { Component } from "react";
 import L from "leaflet";
 import Choro from "./Mapa";
