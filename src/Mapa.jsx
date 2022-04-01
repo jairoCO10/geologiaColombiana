@@ -2,11 +2,14 @@
 import { useLeaflet } from "react-leaflet";
 import L from "leaflet";
 import "leaflet-choropleth";
+import textures from 'textures';
 
 function Choro(props) {
   const { map } = useLeaflet();
+const texture = textures
+  .lines()
+  .thicker();
 
-  
     if (Object.keys(props.geojson).length > 0) {
       L.choropleth(props.geojson, {
         style:(feature) => {
@@ -15,7 +18,9 @@ function Choro(props) {
             fillColor: "black",
             color: "white",
             weight: 2,
-            opacity: 1
+            opacity: 1,
+            texture: "circle"
+            
           };
           switch (feature.properties.Símbolo_U) {
             case "Q2-m":
@@ -24,7 +29,9 @@ function Choro(props) {
                 fillColor: "#FFF4E1",
                 color: "black",
                 weight: 2,
-                opacity: 1
+                opacity: 1,
+                texture: "circle"
+                
               };
               break;
             case "Q-al":
@@ -36,7 +43,9 @@ function Choro(props) {
                 width: "100%",
                 height: "50px",
                 weight: 2,
-                opacity: 1
+                opacity: 1,
+                texture: "line"
+
               };
               break;
               case "Q2-Sm":
@@ -47,7 +56,8 @@ function Choro(props) {
                 width: "100%",
                 height: "50px",
                 weight: 2,
-                opacity: 1
+                opacity: 1,
+                texture: "line"
               };
               break;
               case "K2-Vu7":
@@ -1985,15 +1995,14 @@ function Choro(props) {
         
         onEachFeature: function (feature, layer) {
           const {
-         
             OBJECTID_1,
             Símbolo_U,
             Descripcion,
             Edad,
             UG_integra,
             Comentario,
-            Shape__Area,
-            Shape__Length
+            Shape_Area,
+            Shape_Length
           } = feature.properties;
           layer.bindPopup(
             `<h3 class = "infoboxHeader"> Mapa Geologico Colombiano</h3><TABLE BORDER="1" CELLSPACING="1" WIDTH="300 COlOR="Green"">
@@ -2004,8 +2013,8 @@ function Choro(props) {
              <TR><TD BGCOLOR="#70F989">Edad</TD> <TD>${Edad}</TD>
              <TR><TD BGCOLOR="#70F989">UG_integra</TD> <TD>${UG_integra}</TD>
              <TR><TD BGCOLOR="#70F989">Comentario</TD> <TD>${Comentario}</TD>
-             <TR><TD BGCOLOR="#70F989">SHAPE_AREA</TD> <TD>${Shape__Area}</TD>
-             <TR><TD BGCOLOR="#70F989">SHAPE_LEN</TD> <TD>${Shape__Length}</TD>
+             <TR><TD BGCOLOR="#70F989">SHAPE_AREA</TD> <TD>${Shape_Area}</TD>
+             <TR><TD BGCOLOR="#70F989">SHAPE_LEN</TD> <TD>${Shape_Length}</TD>
              </TABLE>`
           );
           // feature.properties.incidents.toLocaleString() +

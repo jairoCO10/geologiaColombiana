@@ -48,7 +48,7 @@ const tiles = [
 
 class App extends Component {
   state = { geojson: {} };
-  
+
 
   fetch1() {
     fetch("https://rawcdn.githack.com/jairoCO10/mapaGeologicoColombiano/15ec6273e49c1045735be9810e2d4088b191a389/grupo2/mapa%20geologico%20grande2.geojson"
@@ -71,16 +71,7 @@ class App extends Component {
     this.fetch1();
     this.fetch2()
   }
-  // fetchData = () => {
-  //    fetch(
-  //      "https://rawcdn.githack.com/jairoCO10/mapaGeomastic/8bb32f50ec1deda349062d0569723977bd9d95be/database/mapa1.geojson"
-  //    )
-  //      .then((response) => response.json())
-  //      .then((geojson) => {
-  //        this.setState({ geojson, loaded: 2 });
-  //      });
-  //  };
-
+ 
   render() {
     return <Leaf geojson={this.state.geojson} />;
   }
@@ -135,15 +126,14 @@ class Leaf extends Component {
               identify= {false}
               attribution= ''
             /> */}
-            
 
 
-              <TileLayer
-              attribution=""
-              url="http://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}"/> 
               <TileLayer
                 attribution=""
-                url="https://www.colombiaenmapas.gov.co/?e=-84.46818979765041,-14.094687432873325,-15.474049172668742,23.281027561376582,4686&b=igac&l=85&u=0&t=33&servicio=85"/>
+                url="http://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}" />
+              <TileLayer
+                attribution=""
+                url="https://www.colombiaenmapas.gov.co/?e=-84.46818979765041,-14.094687432873325,-15.474049172668742,23.281027561376582,4686&b=igac&l=85&u=0&t=33&servicio=85" />
             </FeatureGroup>
           </LayersControl.Overlay>
         </LayersControl>
@@ -155,10 +145,7 @@ class Leaf extends Component {
           exportOnly
         />
         <ScaleControl />
-        <Choro 
-        geojson={this.props.geojson} 
-        fillColor= "purple" 
-        color="yellow" />
+        <Choro geojson={this.props.geojson} />
       </Map>
     );
   }
