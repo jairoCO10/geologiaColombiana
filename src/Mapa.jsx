@@ -2,13 +2,9 @@
 import { useLeaflet } from "react-leaflet";
 import L from "leaflet";
 import "leaflet-choropleth";
-import textures from 'textures';
 
 function Choro(props) {
   const { map } = useLeaflet();
-const texture = textures
-  .lines()
-  .thicker();
 
     if (Object.keys(props.geojson).length > 0) {
       L.choropleth(props.geojson, {
@@ -2001,8 +1997,8 @@ const texture = textures
             Edad,
             UG_integra,
             Comentario,
-            Shape_Area,
-            Shape_Length
+            SHAPE_AREA,
+            SHAPE_LEN
           } = feature.properties;
           layer.bindPopup(
             `<h3 class = "infoboxHeader"> Mapa Geologico Colombiano</h3><TABLE BORDER="1" CELLSPACING="1" WIDTH="300 COlOR="Green"">
@@ -2013,8 +2009,8 @@ const texture = textures
              <TR><TD BGCOLOR="#70F989">Edad</TD> <TD>${Edad}</TD>
              <TR><TD BGCOLOR="#70F989">UG_integra</TD> <TD>${UG_integra}</TD>
              <TR><TD BGCOLOR="#70F989">Comentario</TD> <TD>${Comentario}</TD>
-             <TR><TD BGCOLOR="#70F989">SHAPE_AREA</TD> <TD>${Shape_Area}</TD>
-             <TR><TD BGCOLOR="#70F989">SHAPE_LEN</TD> <TD>${Shape_Length}</TD>
+             <TR><TD BGCOLOR="#70F989">SHAPE_AREA</TD> <TD>${SHAPE_AREA}</TD>
+             <TR><TD BGCOLOR="#70F989">SHAPE_LEN</TD> <TD>${SHAPE_LEN}</TD>
              </TABLE>`
           );
           // feature.properties.incidents.toLocaleString() +

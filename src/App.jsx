@@ -51,7 +51,7 @@ class App extends Component {
 
 
   fetch1() {
-    fetch("https://rawcdn.githack.com/jairoCO10/mapaGeologicoColombiano/15ec6273e49c1045735be9810e2d4088b191a389/grupo2/mapa%20geologico%20grande2.geojson"
+    fetch("https://rawcdn.githack.com/jairoCO10/mapaGeologicoColombiano/cc5be39355761dfdc7bb6e553fe78e4cb9d74422/grupo2/mapa%20geologico%20grande1.geojson"
     )
       .then((response) => response.json())
       .then((json) => this.setState({ geojson: json }))
@@ -59,7 +59,7 @@ class App extends Component {
   }
 
   fetch2() {
-    fetch("https://rawcdn.githack.com/jairoCO10/mapaGeologicoColombiano/15ec6273e49c1045735be9810e2d4088b191a389/grupo2/mapa%20geologico%20grande1.geojson"
+    fetch("https://rawcdn.githack.com/jairoCO10/mapaGeologicoColombiano/cc5be39355761dfdc7bb6e553fe78e4cb9d74422/grupo2/mapa%20geologico%20grande2.geojson"
     )
       .then((response) => response.json())
       .then((json) => this.setState({ geojson: json }))
